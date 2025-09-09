@@ -1,7 +1,7 @@
 const { Store, Rating, User } = require("../models");
 const { Op } = require("sequelize");
 
-// 📌 Get stores with filters, avg rating, and user's rating
+// Get stores with filters, avg rating, and user's rating
 exports.getStores = async (req, res) => {
   try {
     const { name, address, sortBy = "name", order = "asc" } = req.query;
@@ -50,7 +50,7 @@ exports.getStores = async (req, res) => {
   }
 };
 
-// 📌 Submit new rating
+// Submit new rating
 exports.submitRating = async (req, res) => {
   try {
     const userId = req.user.id;
@@ -77,7 +77,7 @@ exports.submitRating = async (req, res) => {
   }
 };
 
-// 📌 Update existing rating
+// Update existing rating
 exports.updateRating = async (req, res) => {
   try {
     const userId = req.user.id;

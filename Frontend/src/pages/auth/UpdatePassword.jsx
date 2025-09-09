@@ -3,7 +3,7 @@ import { updatePassword } from "../../api/authApi";
 import { AuthContext } from "../../context/AuthContext";
 
 const UpdatePassword = () => {
-  const { user } = useContext(AuthContext); // ✅ Get logged-in user
+  const { user } = useContext(AuthContext); 
   const [formData, setFormData] = useState({
     oldPassword: "",
     newPassword: "",
@@ -19,11 +19,11 @@ const UpdatePassword = () => {
     e.preventDefault();
     try {
       await updatePassword(formData.oldPassword, formData.newPassword);
-      setMessage("✅ Password updated successfully.");
+      setMessage(" Password updated successfully.");
       setError("");
       setFormData({ oldPassword: "", newPassword: "" });
     } catch (err) {
-      setError("❌ Password update failed. Check your old password.");
+      setError("Password update failed. Check your old password.");
       setMessage("");
     }
   };

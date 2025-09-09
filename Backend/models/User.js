@@ -50,13 +50,6 @@ const User = sequelize.define(
 
 
 
-User.associate = (models) => {
-  // A User (customer) can give many ratings
-  User.hasMany(models.Rating, { as: "ratings", foreignKey: "userId" });
-
-  // A User (owner) can own many stores
-  User.hasMany(models.Store, { as: "stores", foreignKey: "ownerId" });
-};
 
 
 module.exports = User;

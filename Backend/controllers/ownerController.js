@@ -12,7 +12,7 @@ exports.updatePassword = async (req, res) => {
     const isMatch = await bcrypt.compare(oldPassword, user.password);
     if (!isMatch) return res.status(400).json({ error: 'Old password is incorrect' });
 
-    // validate new password (reuse your passwordValid() util if you like)
+    // validate new password
     if (newPassword.length < 8) return res.status(400).json({ error: 'New password too short' });
 
     user.password = await bcrypt.hash(newPassword, 10);

@@ -1,23 +1,3 @@
-// const mongoose = require("mongoose");
-// const dotenv = require("dotenv");
-
-// dotenv.config(); // make sure env vars are loaded
-
-// const connectDB = async () => {
-//   try {
-//     await mongoose.connect(process.env.MONGO_URI);
-//     console.log("MongoDB connected");
-//   } catch (err) {
-//     console.error("MongoDB connection error:", err);
-//     process.exit(1);
-//   }
-// };
-
-// module.exports = 
-// config/db.js
-// config/db.js
-
-
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 

@@ -18,7 +18,7 @@ const Login = () => {
     try {
       const data = await loginUser(formData.email, formData.password);
 
-      // ✅ Fix: role & name are inside data.user
+      // Fix: role & name are inside data.user
       login({
         token: data.token,
         role: data.user.role,

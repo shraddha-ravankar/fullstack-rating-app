@@ -9,17 +9,14 @@ const Rating = sequelize.define(
       allowNull: false,
       validate: { min: 1, max: 5 },
     },
-    comment: {
+    review: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
-
-Rating.associate = (models) => {
-  Rating.belongsTo(models.User, { as: "user", foreignKey: "userId" });
-  Rating.belongsTo(models.Store, { as: "store", foreignKey: "storeId" });
-};
 
 module.exports = Rating;

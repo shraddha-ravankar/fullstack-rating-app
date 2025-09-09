@@ -15,16 +15,16 @@ async function seedAdmin() {
     const hashedPassword = await bcrypt.hash("New@123", 10);
 
     await User.create({
-      name: "Super Admin", // valid for admin (3–60 chars)
+      name: "Super Admin", 
       email: "admin@example.com",
       password: hashedPassword,
       role: "admin",
       address: "HQ Main Office",
     });
 
-    console.log("✅ Admin created: admin@example.com / New@123");
+    console.log("Admin created: admin@example.com / New@123");
   } catch (err) {
-    console.error("❌ Error seeding admin:", err);
+    console.error("Error seeding admin:", err);
   } finally {
     process.exit();
   }

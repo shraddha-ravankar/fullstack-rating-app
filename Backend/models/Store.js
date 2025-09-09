@@ -4,21 +4,16 @@ const { sequelize } = require("../config/db");
 const Store = sequelize.define(
   "Store",
   {
-    name: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-    },
-    address: {
-      type: DataTypes.STRING(200),
-      allowNull: false,
-    },
+    name: { type: DataTypes.STRING, allowNull: false },
+    description: { type: DataTypes.TEXT },
+    address: { type: DataTypes.STRING },
+    phone: { type: DataTypes.STRING },
+    opening_hours: { type: DataTypes.STRING },
+    images: { type: DataTypes.JSON },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
-
-Store.associate = (models) => {
-  Store.belongsTo(models.User, { as: "owner", foreignKey: "ownerId" });
-  Store.hasMany(models.Rating, { as: "ratings", foreignKey: "storeId" });
-};
 
 module.exports = Store;

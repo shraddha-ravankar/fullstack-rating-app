@@ -2,9 +2,8 @@ const bcrypt = require("bcryptjs");
 const { Op } = require("sequelize");
 const { User, Store, Rating } = require("../models");
 
-// ================================
-// 📌 Dashboard Stats
-// ================================
+//Dashboard 
+
 exports.dashboard = async (req, res) => {
   try {
     const totalUsers = await User.count();
@@ -18,9 +17,7 @@ exports.dashboard = async (req, res) => {
   }
 };
 
-// ================================
-// 📌 Add User (admin or normal)
-// ================================
+//add user 
 exports.addUser = async (req, res) => {
   try {
     const { name, email, password, address, role } = req.body;
@@ -42,9 +39,7 @@ exports.addUser = async (req, res) => {
   }
 };
 
-// ================================
-// 📌 Add Store
-// ================================
+//add store
 exports.addStore = async (req, res) => {
   try {
     const { name, address, description, phone, opening_hours, ownerId } = req.body;
