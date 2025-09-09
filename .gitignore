@@ -1,57 +1,10 @@
-# Node modules
-/node_modules
-npm-debug.log
-yarn-debug.log
-yarn-error.log
-
-# Environment variables
-.env
-
-
-
-# Logs
-logs
-*.log
+# ───────────────────────────────
 # Node.js dependencies
 node_modules/
 .pnp/
 .pnp.cjs
 
-# Production build artifacts
-build/
-dist/
-out/
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# Editor directories and files
-.vscode/        # VS Code settings (optional, but good to ignore user-specific settings)
-*.code-workspace
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Any other project-specific files you don't want to commit
-# For example, if your backend creates specific log files:
-# server/logs/
-# server/*.log
-
-
-
-
-
+# ───────────────────────────────
 # Logs
 logs
 *.log
@@ -61,18 +14,52 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ───────────────────────────────
+# Environment variables (never commit secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+frontend/.env
 
+# ───────────────────────────────
+# Build / Production artifacts
+dist/
+dist-ssr/
+build/
+out/
+frontend/build/
+frontend/dist/
+backend/build/
+
+# ───────────────────────────────
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
+*.code-workspace
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# ───────────────────────────────
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# ───────────────────────────────
+# Testing / coverage / cache
+coverage/
+.nyc_output/
+.eslintcache
+.cache/
+.parcel-cache/
+
+# ───────────────────────────────
+# Custom project logs (optional)
+# server/logs/
+# server/*.log
